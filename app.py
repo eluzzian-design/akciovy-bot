@@ -21,7 +21,7 @@ def analyzuj_akcii(ticker_symbol, period):
     if hist.empty: return "Data nebyla nalezena."
     data_summary = hist[['Close', 'Volume']].tail(10).to_string()
     prompt = f"Analyzuj akcii {ticker_symbol} za {period}. Data: {data_summary}. Co si o tom myslíš?"
-    response = client.models.generate_content(model="gemini-flash-latest", contents=prompt)
+    response = client.models.generate_content(model="gemini-3.5-flash", contents=prompt)
     return response.text
 
 if st.button("Analyzovat"):
