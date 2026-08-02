@@ -6,7 +6,7 @@ st.set_page_config(page_title="Investiční Analytik", page_icon="📈")
 st.title("📈 Osobní investiční asistent")
 
 try:
-    api_key = st.secrets["Google_API_key"]
+    api_key = st.secrets["Gemini_API_key"]
     client = genai.Client(api_key=api_key)
 except:
     st.error("API klíč nebyl nalezen v Secrets.")
@@ -52,7 +52,7 @@ if prompt := st.chat_input("Chceš se na něco zeptat k této akcii?"):
     # Odpověď od modelu (tady voláš své Gemini)
     # Předpokládám, že máš 'client' vytvořený někde výše v kódu
     response = client.models.generate_content(
-        model="gemini-1.5-flash", 
+        model="gemini-3.5-flash", 
         contents=prompt
     )
     
