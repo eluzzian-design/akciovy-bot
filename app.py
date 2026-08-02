@@ -6,7 +6,7 @@ st.set_page_config(page_title="Investiční Analytik", page_icon="📈")
 st.title("📈 Osobní investiční asistent")
 
 try:
-    api_key = st.secrets["Gemini_API_key"]
+    api_key = st.secrets["Google_API_key"]
     client = genai.Client(api_key=api_key)
 except:
     st.error("API klíč nebyl nalezen v Secrets.")
